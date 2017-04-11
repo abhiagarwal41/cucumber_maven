@@ -15,7 +15,7 @@ public class SmokeTest {
 	@When("^I enter valid \"(.*?)\" and \"(.*?)\"$")
 	public void i_enter_valid_and(String arg1, String arg2) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("i_enter_valid_and");
+		System.out.println("i_enter_valid_and" + arg1+ arg2);
 	}
 
 	@Then("^user should login successfully$")
