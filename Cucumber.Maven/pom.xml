@@ -11,12 +11,12 @@
 			<version>3.3.1</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-server</artifactId>
-    <version>3.3.1</version>
-  </dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-server</artifactId>
+			<version>3.3.1</version>
+		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
@@ -30,28 +30,28 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-     <groupId>info.cukes</groupId>
-     <artifactId>gherkin</artifactId>
-     <version>2.12.2</version>
-     </dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>gherkin</artifactId>
+			<version>2.12.2</version>
+		</dependency>
 		<dependency>
-		
+
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
-    <groupId>com.vimalselvam</groupId>
-    <artifactId>cucumber-extentsreport</artifactId>
-    <version>2.0.4</version>
-    </dependency>
-    		<dependency>
-    <groupId>com.relevantcodes</groupId>
-    <artifactId>extentreports</artifactId>
-    <version>2.41.2</version>
-     </dependency>
-     
+			<groupId>com.vimalselvam</groupId>
+			<artifactId>cucumber-extentsreport</artifactId>
+			<version>2.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
+
 	</dependencies>
 </project>

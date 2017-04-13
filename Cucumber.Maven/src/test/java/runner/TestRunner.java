@@ -8,7 +8,8 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions( features = "features", 
                glue = { "stepDefinition" }, 
-               plugin = {"html:target/cucumber-html-report"})
+               plugin = {"html:target/cucumber-html-report"},
+               tags = {"@web, @dummy"})
 public class TestRunner {
 
 }

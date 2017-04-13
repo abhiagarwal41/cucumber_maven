@@ -1,10 +1,14 @@
 package stepDefinition;
 
+import org.openqa.selenium.WebDriver;
+
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class SmokeTest {
+public class SmokeTest extends AbstractStepDefinition {
+	
+	WebDriver driver = getDriver();
 	
 	@Given("^Open firefox and start application$")
 	public void open_firefox_and_start_application() throws Throwable {

@@ -7,26 +7,49 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.DataTable;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import cucumber.api.java.en_lol.WEN;
 import junit.framework.Assert;
 
-public class FacebookTest {
+public class FacebookTest extends AbstractStepDefinition{
 	
-	WebDriver driver;
+	WebDriver driver=getDriver();
 	
-	@Given("^Open Chrome and Start Application$")
-	public void open_Chrome_and_Start_Application() throws Throwable {
-		System.setProperty("webdriver.chrome.driver", "./libs/chromedriver.exe");
-		driver=new ChromeDriver();
+	@Before
+	public void testSetup(){
+		//System.setProperty("webdriver.chrome.driver", "./libs/chromedriver.exe");
+		//driver=new ChromeDriver();
+		System.out.println("new scenario");
+	}
+	
+	@After
+	public void testShutdown(){
+		//driver.quit();
+	}
+	
+	@Before("@web")
+	public void testSetupWeb(){
+	 System.out.println("in before testSetupWeb ");
+	}
+	
+	@After("@web")
+	public void testShutdownWeb(){
+		System.out.println("in after testShutdownWeb ");
+	}
+	
+	@Given("^Start Application$")
+	public void Start_Application() throws Throwable {
+		
 		driver.get("http://www.facebook.com");
 	   
 	}
 
-	@When("^I enter invalid usename and password$")
-	public void i_enter_invalid_usename_and_password(DataTable table) throws Throwable {
+	@When("^I enter invalid username and password$")
+	public void i_enter_invalid_username_and_password(DataTable table) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	    // For automatic transformation, change DataTable to one of
 	    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
