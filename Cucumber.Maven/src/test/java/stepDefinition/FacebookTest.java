@@ -15,6 +15,7 @@ import cucumber.api.java.en.When;
 import cucumber.api.java.en_lol.WEN;
 import junit.framework.Assert;
 
+//create different step def classes as per your needs (like one for every page)
 public class FacebookTest extends AbstractStepDefinition{
 	
 	WebDriver driver=getDriver();

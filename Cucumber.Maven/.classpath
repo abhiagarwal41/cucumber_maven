@@ -33,7 +33,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/aaga60/.m2/repository/info/cukes/gherkin/2.12.2/gherkin-2.12.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/aaga60/git/Cucumber.Maven/Cucumber.Maven/libs/selenium-server-standalone-3.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/aaga60/git/Cucumber.Maven/Cucumber.Maven/libs/gherkin-2.12.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
