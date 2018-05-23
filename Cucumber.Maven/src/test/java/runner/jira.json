@@ -1,0 +1,18 @@
+{
+	"fields": {
+		"project": {
+			"key": "TICKET"
+		},
+		"summary": "REST EXAMPLE",
+		"description": "Creating an issue via REST API",
+		"components": [{"name": "Europe"}],
+		"region": "APAC",
+		"priority": {"name": "High"},
+		"reporter": {
+			"name": "username"
+		},
+		"issuetype": {
+			"name": "Bug"
+		}
+	}
+}
