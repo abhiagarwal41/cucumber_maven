@@ -137,6 +137,25 @@ public class SshConnectionManager {
 	        }
 
 	    }
+	
+	public void upload(String directory, String uploadFile) throws Exception {
+
+		ChannelSftp sftp = (ChannelSftp) getSession().openChannel("sftp");
+		sftp.connect();
+		File file = new File(uploadFile);
+		if (file.exists()) {
+
+			sftp.cd(directory);
+			System.out.println("directory: " + directory);
+			if (file.isFile()) {
+				InputStream ins = new FileInputStream(file);
+				sftp.put(ins, new String(file.getName().getBytes(), "UTF-8"));
+				sftp.chmod(Integer.parseInt("777", 8), directory+"/"+file.getName());
+			}
+		}
+		sftp.disconnect();
+	}
+	
 
 	    public void close(){
 	    	try {
