@@ -90,6 +90,24 @@ public class Functions {
 
 	}
 	
+	public static int getTotalRowCountFromPTXTable(Long tradableInfoId) {
+		String sqlQuery = "select * from InstrumentPTXInfo where " + "tradableInfoID =" + tradableInfoId;
+		Statement statement = dbUtility.createStatement();
+		ResultSet rs = null;
+		try {
+			rs = dbUtility.executeQuery(statement, sqlQuery);
+			rs.last();
+			int rowcount = rs.getRow();
+			return rowcount;
+		} catch (Exception e) {
+			System.out.println("Exception while fetching rows from db:" + e.getMessage());
+			logger.error("Exception while fetching rows from db:" + e.getMessage());
+			return -1;
+		} finally {
+			dbUtility.close(rs).close(statement);
+		}
+	}
+	
 	public static void createRetryFileOnUnix(LinkedList<Long> tics, String region){
 		
 		for(Long tic:tics)
