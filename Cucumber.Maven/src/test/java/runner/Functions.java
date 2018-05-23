@@ -89,6 +89,36 @@ public class Functions {
 			dbUtility.closeConnection();
 
 	}
+	
+	public static void createRetryFileOnUnix(LinkedList<Long> tics, String region){
+		
+		for(Long tic:tics)
+			appendFile(ticsFilePath, tic.toString());
+	
+		
+		String hostname = getProperty("UNIX_HOSTNAME_"+region);
+		String username = getProperty("userName");
+		String password = getProperty("password");
+		String directory = getProperty("UNIX_DIRECTORY");
+		String sudoCommand = "sudo su - rokdev";
+		SshConnectionManager sshConnectionManager = new SshConnectionManager();
+		sshConnectionManager.connect(hostname, username, password);
+		sshConnectionManager.sudoUser(sudoCommand);
+		sshConnectionManager.executeCommand(password, 15);
+		System.out.println("Creating retry file on UNIX box:"+hostname);
+		logger.info("Creating retry file on UNIX box:"+hostname);
+		try {
+			sshConnectionManager.upload(directory, ticsFilePath);
+			System.out.println("Retry file created:" + directory + "/tics.txt");
+			logger.info("Retry file created:" + directory + "/tics.txt");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sshConnectionManager.close();
+
+		
+	}
+
 
 	public static void deleteExistingCounterpartyData()
 			throws JsonIOException, JsonSyntaxException, FileNotFoundException {
